@@ -1,31 +1,11 @@
-// npm - global command, comes with node 
-
-// npm --version 
-
-// local depedency - use it only in this particular project 
-
-// npm i <packageName>
-
-// global dependency - use it in any project 
-
-// npm install -g <packageName>
-
-// sudo install -g <packageName> (mac)
+const {readFile} = require('fs');
 
 
-// package.json - manifest file(stores important info about project/package) (three ways to do this)
+readFile('./content/first.txt', 'utf8', (err, data) => {
+    if(err){
+        return;
+    } else {
+        console.log(data)
+    }
+})
 
-// manual approach ( create package.json in the root, create properties etc)
-
-// npm init (step by step, press enter to skip)
-
-// npm init -y (everyting default) 
-
-
-const _ = require('lodash');
-
-const items = [1, [2,[3,[4]]]];
-
-const newItems = _.flattenDeep(items);
-
-console.log(newItems);
